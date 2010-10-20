@@ -7,9 +7,8 @@
 //
 
 #import "TestUncompressedSound.h"
-#import "AudioManger.h"
+#import "ElectricAudio.h"
 
-NSString * defaultSoundKey	= @"MySoundReferenceKey";
 NSString * defaultSoundName = @"FanFare";
 NSString * defaultSoundType = @"wav";
 
@@ -18,6 +17,15 @@ NSString * defaultSoundType = @"wav";
 #pragma mark ---------------------------------------------------------
 #pragma mark === Constructor / Destructor Functions  ===
 #pragma mark ---------------------------------------------------------
+
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	if ( self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil] )
+	{
+		
+	}
+	return self;
+}
 
 - (void) dealloc
 {
@@ -38,14 +46,16 @@ NSString * defaultSoundType = @"wav";
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	
+	engine = new EA::SoundEngine();
+	sound  = nil;
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
 	
-	// allways release the sound when the view disappers
-	[[AudioManger instance] releaseSoundWithKey:defaultSoundKey];
+	delete( engine );
 }
 
 #pragma mark ---------------------------------------------------------
@@ -58,37 +68,53 @@ NSString * defaultSoundType = @"wav";
 
 - (IBAction) createSoundObject:(id)_sender
 {
-	Boolean loop = [loopSound isOn];
-	if ( [[AudioManger instance] createSoundWithKey:defaultSoundKey withResource:defaultSoundName ofType:defaultSoundType isLooping:loop] )
+	if ( sound == nil )
 	{
-		float volume = [soundVolume value];
-		[[AudioManger instance] setSoundVolumeWithKey:defaultSoundKey volume:volume];
+		sound = engine->load( defaultSoundName, defaultSoundType );
+		if ( sound )
+		{
+			sound->setVolume( [soundVolume value] );
+			sound->setLooped( [loopSound isOn] );
+		}
 	}
 }
 
 - (IBAction) releaseSoundObject:(id)_sender
 {
-	[[AudioManger instance] releaseSoundWithKey:defaultSoundKey];
+	engine->release( sound );
+	sound = nil;
 }
 
 - (IBAction) playSoundObject:(id)_sender
 {
-	[[AudioManger instance] playSoundWithKey:defaultSoundKey];
+	if ( sound )
+	{
+		sound->play();
+	}
 }
 
 - (IBAction) pauseSoundObject:(id)_sender
 {
-	[[AudioManger instance] pauseSoundWithKey:defaultSoundKey];
+	if ( sound )
+	{
+		sound->pause();
+	}
 }
 
 - (IBAction) stopSoundObject:(id)_sender
 {
-	[[AudioManger instance] stopSoundWithKey:defaultSoundKey];
+	if ( sound )
+	{
+		sound->stop();
+	}
 }
 
 - (IBAction) rewindSoundObject:(id)_sender
 {
-	[[AudioManger instance] rewindSoundWithKey:defaultSoundKey];
+	if ( sound )
+	{
+		sound->rewind();
+	}
 }
 
 - (IBAction) volumeChanged:(id)_sender
@@ -97,7 +123,10 @@ NSString * defaultSoundType = @"wav";
 	{
 		UISlider * slider = _sender;
 		float volume = [slider value];
-		[[AudioManger instance] setSoundVolumeWithKey:defaultSoundKey volume:volume];
+		if ( sound )
+		{
+			sound->setVolume( volume );
+		}
 	}
 }
 
@@ -106,8 +135,10 @@ NSString * defaultSoundType = @"wav";
 	if ( [_sender isKindOfClass:[UISwitch class]] )
 	{
 		UISwitch * sw = _sender;
-		Boolean loop = [sw isOn];
-		[[AudioManger instance] setSoundLoopedWithKey:defaultSoundKey loop:loop];
+		if ( sound )
+		{
+			sound->setLooped( [sw isOn] );
+		}
 	}
 }
 

@@ -9,9 +9,9 @@
 #ifndef __ElectricAudio_H__
 #define __ElectricAudio_H__
 
-#import "AudioManger.h"
-
-#import "Sound.h"
 #import "SoundEngine.h"
+#import "SoundListener.h"
+#import "SoundBuffer.h"
+#import "Sound.h"
 
 #endif

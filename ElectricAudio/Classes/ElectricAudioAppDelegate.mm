@@ -8,7 +8,6 @@
 
 #import "ElectricAudioAppDelegate.h"
 #import "ElectricAudioViewController.h"
-#import "AudioManger.h"
 
 @implementation ElectricAudioAppDelegate
 
@@ -16,10 +15,8 @@
 @synthesize viewController;
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-	[AudioManger create];
-	
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{    
     // Override point for customization after app launch    
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
@@ -31,8 +28,6 @@
 - (void)dealloc {
     [viewController release];
     [window release];
-	
-	[AudioManger destroy];
     [super dealloc];
 }
 

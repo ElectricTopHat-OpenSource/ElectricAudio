@@ -1,44 +1,50 @@
 //
-//  SoundEngine.h
+//  SoundBuffer.h
 //  ElectricAudio
 //
-//  Created by Robert McDowell on 08/06/2010.
+//  Created by Robert McDowell on 20/10/2010.
 //  Copyright 2010 Electric TopHat Ltd. All rights reserved.
 //
 
-#if !defined(__SoundEngine_h__)
-#define __SoundEngine_h__
+#import <Foundation/Foundation.h>
 
-#import "SoundListener.h"
-#import <map>
-#import <OpenAL/al.h>
-#import <OpenAL/alc.h>
+#if !defined(__SoundBuffer_h__)
+#define __SoundBuffer_h__
 
-namespace EA { class Sound; }
-namespace EA { class SoundBuffer; }
+#if !defined(OpenALStaticBuffer)
+#define OpenALStaticBuffer 1
+#endif
+
+namespace EA { class SoundEngine; };
 
 namespace EA 
 {
-	
-	typedef std::map<NSUInteger,EA::Sound*>			SoundsMap;
-	typedef std::map<NSUInteger,EA::SoundBuffer*>	SoundBuffersMap;
-	
-	class SoundEngine
+	class SoundBuffer 
 	{
+#pragma mark ---------------------------------------------------------
+#pragma mark friend classes
+#pragma mark ---------------------------------------------------------
+		
+		friend class SoundEngine;
+		
+#pragma mark ---------------------------------------------------------
+#pragma mark End friend classes
+#pragma mark ---------------------------------------------------------
+		
 #pragma mark ---------------------------------------------------------
 #pragma mark Constructor / Destructor
 #pragma mark ---------------------------------------------------------
-	public: // Functions
+	private: // Functions
 		
 		// --------------------------------------------------
 		// Constructor
 		// --------------------------------------------------
-		SoundEngine();
+		SoundBuffer( NSString * _filePath );
 		
 		// --------------------------------------------------
 		// Destructor
 		// --------------------------------------------------
-		~SoundEngine();
+		virtual ~SoundBuffer();
 		
 #pragma mark ---------------------------------------------------------
 #pragma mark End Constructor / Destructor
@@ -49,23 +55,18 @@ namespace EA
 #pragma mark ---------------------------------------------------------
 	public:	// Functions
 		
-		// access the sound engines listener
-		inline SoundListener &		 listener()			{ return m_listener; };
-		inline const SoundListener & listener() const	{ return m_listener; };
+		inline NSString *	name() const		{ return [m_filePath lastPathComponent]; };
+		inline NSString *	filePath() const	{ return m_filePath; };
+		inline NSUInteger	hash() const		{ return [m_filePath hash]; };
 		
-		// check to se if a sound is loaded
-		BOOL isLoaded( const NSString * _name, const NSString * _ext, NSBundle * _bundle = nil );
-		BOOL isLoaded( const NSString * _filePath );
+		inline NSUInteger	bufferID()	const { return m_bufferID; };
+		inline NSUInteger	size()		const { return m_bufferSize; };
+		inline NSInteger	format()	const { return m_format; };
+		inline NSInteger	frequency() const { return m_frequecy; };
+		inline double		duration()	const { return m_duration; };
 		
-		// load a sound into the bank
-		Sound * load( const NSString * _name, const NSString * _ext, NSBundle * _bundle = nil );
-		Sound * load( const NSString * _filePath );
-		
-		// release the sound
-		void release( Sound * _sound );
-		
-		// clear the entire sound bank
-		void clear();
+		Boolean		isError() const;
+		NSString *	error() const;
 		
 #pragma mark ---------------------------------------------------------
 #pragma mark End Public Functions
@@ -76,7 +77,9 @@ namespace EA
 #pragma mark ---------------------------------------------------------
 	private: // Functions
 		
-		void release( SoundBuffer * _buffer );
+		inline NSInteger referenceCount() const { return m_referenceCount; };
+		inline void incrementReferenceCount() { m_referenceCount++; };
+		inline void decrementReferenceCount() { m_referenceCount--; };
 		
 #pragma mark ---------------------------------------------------------
 #pragma mark End Private Functions
@@ -87,18 +90,25 @@ namespace EA
 #pragma mark ---------------------------------------------------------
 	private: // Data
 		
-		ALCcontext *	m_context; // stores the context (the 'air')
-		ALCdevice *		m_device; // stores the device
+		NSString *	m_filePath;
 		
-		SoundListener	m_listener;
-		SoundsMap		m_sounds;
-		SoundBuffersMap	m_buffers;
+		NSUInteger	m_referenceCount;
+		NSUInteger	m_bufferID;
+		
+		NSInteger	m_error;
+		
+#if OpenALStaticBuffer
+		void *		m_bufferData; // buffer 
+#endif
+		NSUInteger	m_bufferSize; // buffer size
+		NSInteger	m_format;	// format
+		NSInteger	m_frequecy; // frequency
+		float		m_duration;	// duration in seconds
 		
 #pragma mark ---------------------------------------------------------
 #pragma mark Private Data
 #pragma mark ---------------------------------------------------------
 	};
-	
-};
+}
 
-#endif // __SoundEngine_h__
+#endif

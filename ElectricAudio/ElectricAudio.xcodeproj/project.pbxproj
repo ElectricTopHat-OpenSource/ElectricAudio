@@ -23,10 +23,8 @@
 /* Begin PBXBuildFile section */
 		0723C1AF11BE34080031E3FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C1AE11BE34080031E3FE /* AudioToolbox.framework */; };
 		0723C1B411BE341F0031E3FE /* SoundEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C1B311BE341F0031E3FE /* SoundEngine.mm */; };
-		0723C20D11BE45500031E3FE /* Sound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C20C11BE45500031E3FE /* Sound.mm */; };
 		0723C27011BE5ECC0031E3FE /* AppleOpenALSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C26E11BE5ECC0031E3FE /* AppleOpenALSupport.mm */; };
 		0723C2C011BE8BD10031E3FE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C2BF11BE8BD10031E3FE /* OpenAL.framework */; };
-		0723C31D11BE90B00031E3FE /* AudioManger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C31C11BE90B00031E3FE /* AudioManger.mm */; };
 		0723C3F211BF91900031E3FE /* Reload.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0723C3F111BF91900031E3FE /* Reload.mp3 */; };
 		0723C45911BFA5FF0031E3FE /* TestSound.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0723C45811BFA5FF0031E3FE /* TestSound.xib */; };
 		0723C49111BFACAB0031E3FE /* Ticking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0723C49011BFACAB0031E3FE /* Ticking.wav */; };
@@ -35,20 +33,33 @@
 		0723C60311BFBA360031E3FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		0723C60511BFBA360031E3FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C1AE11BE34080031E3FE /* AudioToolbox.framework */; };
 		0723C60611BFBA360031E3FE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C2BF11BE8BD10031E3FE /* OpenAL.framework */; };
-		0723C60711BFBA500031E3FE /* AudioManger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C31C11BE90B00031E3FE /* AudioManger.mm */; };
 		0723C60811BFBA560031E3FE /* SoundEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C1B311BE341F0031E3FE /* SoundEngine.mm */; };
 		0723C60911BFBA5D0031E3FE /* AppleOpenALSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C26E11BE5ECC0031E3FE /* AppleOpenALSupport.mm */; };
-		0723C60A11BFBA630031E3FE /* Sound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0723C20C11BE45500031E3FE /* Sound.mm */; };
 		0723C60B11BFBA770031E3FE /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0723C1B211BE341F0031E3FE /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0723C60C11BFBA7D0031E3FE /* ElectricAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 0723C19F11BE337F0031E3FE /* ElectricAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0723C60D11BFBA810031E3FE /* Sound.h in Headers */ = {isa = PBXBuildFile; fileRef = 0723C20B11BE45500031E3FE /* Sound.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0723C60E11BFBA860031E3FE /* AudioManger.h in Headers */ = {isa = PBXBuildFile; fileRef = 0723C31B11BE90B00031E3FE /* AudioManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0723C61611BFBADB0031E3FE /* AppleOpenALSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 0723C26F11BE5ECC0031E3FE /* AppleOpenALSupport.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		0723C69711BFC7670031E3FE /* TODO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0723C69611BFC7670031E3FE /* TODO.rtf */; };
-		07928F5311DA2F090034DE07 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07928F4F11DA2F080034DE07 /* Icon.png */; };
-		07928F5411DA2F090034DE07 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07928F5011DA2F080034DE07 /* Default.png */; };
 		07A21770126F2C0600084A47 /* TestUncompressedSound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A2176F126F2C0600084A47 /* TestUncompressedSound.mm */; };
 		07A21790126F2D6300084A47 /* UIDevice-Extended.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A2178F126F2D6300084A47 /* UIDevice-Extended.mm */; };
+		07A217B9126F364500084A47 /* SoundBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A217B8126F364500084A47 /* SoundBuffer.mm */; };
+		07A217BA126F364500084A47 /* SoundBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A217B7126F364500084A47 /* SoundBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A217BB126F364500084A47 /* SoundBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A217B8126F364500084A47 /* SoundBuffer.mm */; };
+		07A217E3126F3C2B00084A47 /* SoundListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A217E2126F3C2B00084A47 /* SoundListener.mm */; };
+		07A217E4126F3C2B00084A47 /* SoundListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A217E1126F3C2B00084A47 /* SoundListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A217E5126F3C2B00084A47 /* SoundListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A217E2126F3C2B00084A47 /* SoundListener.mm */; };
+		07A2180B126F499200084A47 /* Sound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A2180A126F499200084A47 /* Sound.mm */; };
+		07A2180C126F499200084A47 /* Sound.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A21809126F499200084A47 /* Sound.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A2180D126F499200084A47 /* Sound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A2180A126F499200084A47 /* Sound.mm */; };
+		07A2187E126F655500084A47 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A2187D126F655500084A47 /* SoundManager.mm */; };
+		07A2187F126F655500084A47 /* SoundManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A2187C126F655500084A47 /* SoundManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A21880126F655500084A47 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07A2187D126F655500084A47 /* SoundManager.mm */; };
+		07A218BC126F696800084A47 /* application_icon@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A218B5126F696700084A47 /* application_icon@2x~iPhone.png */; };
+		07A218BD126F696800084A47 /* application_icon~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A218B6126F696700084A47 /* application_icon~iPad.png */; };
+		07A218BE126F696800084A47 /* application_icon~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A218B7126F696700084A47 /* application_icon~iPhone.png */; };
+		07A218BF126F696800084A47 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 07A218B8126F696800084A47 /* iTunesArtwork */; };
+		07A218C0126F696800084A47 /* search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A218B9126F696800084A47 /* search_icon.png */; };
+		07A218C1126F696800084A47 /* settings_search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A218BA126F696800084A47 /* settings_search_icon.png */; };
+		07A218C2126F696800084A47 /* settings_search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A218BB126F696800084A47 /* settings_search_icon@2x.png */; };
 		1D3623260D0F684500981E51 /* ElectricAudioAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ElectricAudioAppDelegate.mm */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -64,13 +75,9 @@
 		0723C1AE11BE34080031E3FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0723C1B211BE341F0031E3FE /* SoundEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEngine.h; sourceTree = "<group>"; };
 		0723C1B311BE341F0031E3FE /* SoundEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundEngine.mm; sourceTree = "<group>"; };
-		0723C20B11BE45500031E3FE /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
-		0723C20C11BE45500031E3FE /* Sound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Sound.mm; sourceTree = "<group>"; };
 		0723C26E11BE5ECC0031E3FE /* AppleOpenALSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppleOpenALSupport.mm; sourceTree = "<group>"; };
 		0723C26F11BE5ECC0031E3FE /* AppleOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleOpenALSupport.h; sourceTree = "<group>"; };
 		0723C2BF11BE8BD10031E3FE /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		0723C31B11BE90B00031E3FE /* AudioManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManger.h; sourceTree = "<group>"; };
-		0723C31C11BE90B00031E3FE /* AudioManger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioManger.mm; sourceTree = "<group>"; };
 		0723C3F111BF91900031E3FE /* Reload.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Reload.mp3; sourceTree = "<group>"; };
 		0723C45811BFA5FF0031E3FE /* TestSound.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestSound.xib; sourceTree = "<group>"; };
 		0723C49011BFACAB0031E3FE /* Ticking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ticking.wav; sourceTree = "<group>"; };
@@ -85,13 +92,28 @@
 		0723C63911BFBFC50031E3FE /* SDKSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SDKSettings.plist; sourceTree = "<group>"; };
 		0723C63C11BFBFD80031E3FE /* SDKSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SDKSettings.plist; sourceTree = "<group>"; };
 		0723C69611BFC7670031E3FE /* TODO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TODO.rtf; sourceTree = "<group>"; };
-		07928F4F11DA2F080034DE07 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		07928F5011DA2F080034DE07 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		07A2176E126F2C0600084A47 /* TestUncompressedSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUncompressedSound.h; sourceTree = "<group>"; };
 		07A2176F126F2C0600084A47 /* TestUncompressedSound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestUncompressedSound.mm; sourceTree = "<group>"; };
 		07A21771126F2C3100084A47 /* TestUncompressed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUncompressed.h; sourceTree = "<group>"; };
 		07A2178E126F2D6300084A47 /* UIDevice-Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Extended.h"; sourceTree = "<group>"; };
 		07A2178F126F2D6300084A47 /* UIDevice-Extended.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIDevice-Extended.mm"; sourceTree = "<group>"; };
+		07A217A5126F33A400084A47 /* Maths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maths.h; sourceTree = "<group>"; };
+		07A217A7126F33D900084A47 /* MathTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTypes.h; sourceTree = "<group>"; };
+		07A217B7126F364500084A47 /* SoundBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBuffer.h; sourceTree = "<group>"; };
+		07A217B8126F364500084A47 /* SoundBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundBuffer.mm; sourceTree = "<group>"; };
+		07A217E1126F3C2B00084A47 /* SoundListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundListener.h; sourceTree = "<group>"; };
+		07A217E2126F3C2B00084A47 /* SoundListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundListener.mm; sourceTree = "<group>"; };
+		07A21809126F499200084A47 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
+		07A2180A126F499200084A47 /* Sound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Sound.mm; sourceTree = "<group>"; };
+		07A2187C126F655500084A47 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		07A2187D126F655500084A47 /* SoundManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundManager.mm; sourceTree = "<group>"; };
+		07A218B5126F696700084A47 /* application_icon@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application_icon@2x~iPhone.png"; sourceTree = "<group>"; };
+		07A218B6126F696700084A47 /* application_icon~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application_icon~iPad.png"; sourceTree = "<group>"; };
+		07A218B7126F696700084A47 /* application_icon~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application_icon~iPhone.png"; sourceTree = "<group>"; };
+		07A218B8126F696800084A47 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		07A218B9126F696800084A47 /* search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_icon.png; sourceTree = "<group>"; };
+		07A218BA126F696800084A47 /* settings_search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_search_icon.png; sourceTree = "<group>"; };
+		07A218BB126F696800084A47 /* settings_search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_search_icon@2x.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* ElectricAudioAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricAudioAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ElectricAudioAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ElectricAudioAppDelegate.mm; sourceTree = "<group>"; };
@@ -137,6 +159,7 @@
 		0723C19E11BE333C0031E3FE /* ElectricAudio */ = {
 			isa = PBXGroup;
 			children = (
+				07A217A3126F337700084A47 /* Utilities */,
 				0723C31211BE90840031E3FE /* Manager */,
 				0723C1A011BE33BC0031E3FE /* Engine */,
 				0723C19F11BE337F0031E3FE /* ElectricAudio.h */,
@@ -147,7 +170,9 @@
 		0723C1A011BE33BC0031E3FE /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				0723C20A11BE45270031E3FE /* Objects */,
+				07A217B6126F361000084A47 /* Buffers */,
+				07A217CA126F3BF000084A47 /* Listener */,
+				07A217FA126F492600084A47 /* Sounds */,
 				0723C1C111BE393F0031E3FE /* Utilities */,
 				0723C1B211BE341F0031E3FE /* SoundEngine.h */,
 				0723C1B311BE341F0031E3FE /* SoundEngine.mm */,
@@ -164,20 +189,11 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		0723C20A11BE45270031E3FE /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				0723C20B11BE45500031E3FE /* Sound.h */,
-				0723C20C11BE45500031E3FE /* Sound.mm */,
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
 		0723C31211BE90840031E3FE /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				0723C31B11BE90B00031E3FE /* AudioManger.h */,
-				0723C31C11BE90B00031E3FE /* AudioManger.mm */,
+				07A2187C126F655500084A47 /* SoundManager.h */,
+				07A2187D126F655500084A47 /* SoundManager.mm */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -274,6 +290,64 @@
 			path = Uncompressed;
 			sourceTree = "<group>";
 		};
+		07A217A3126F337700084A47 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				07A217A4126F338D00084A47 /* Maths */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		07A217A4126F338D00084A47 /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				07A217A5126F33A400084A47 /* Maths.h */,
+				07A217A7126F33D900084A47 /* MathTypes.h */,
+			);
+			path = Maths;
+			sourceTree = "<group>";
+		};
+		07A217B6126F361000084A47 /* Buffers */ = {
+			isa = PBXGroup;
+			children = (
+				07A217B7126F364500084A47 /* SoundBuffer.h */,
+				07A217B8126F364500084A47 /* SoundBuffer.mm */,
+			);
+			path = Buffers;
+			sourceTree = "<group>";
+		};
+		07A217CA126F3BF000084A47 /* Listener */ = {
+			isa = PBXGroup;
+			children = (
+				07A217E1126F3C2B00084A47 /* SoundListener.h */,
+				07A217E2126F3C2B00084A47 /* SoundListener.mm */,
+			);
+			path = Listener;
+			sourceTree = "<group>";
+		};
+		07A217FA126F492600084A47 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				07A21809126F499200084A47 /* Sound.h */,
+				07A2180A126F499200084A47 /* Sound.mm */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		07A2189D126F695A00084A47 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				07A218B5126F696700084A47 /* application_icon@2x~iPhone.png */,
+				07A218B6126F696700084A47 /* application_icon~iPad.png */,
+				07A218B7126F696700084A47 /* application_icon~iPhone.png */,
+				07A218B8126F696800084A47 /* iTunesArtwork */,
+				07A218B9126F696800084A47 /* search_icon.png */,
+				07A218BA126F696800084A47 /* settings_search_icon.png */,
+				07A218BB126F696800084A47 /* settings_search_icon@2x.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,12 +397,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07A2189D126F695A00084A47 /* icons */,
 				0723C63811BFBFC50031E3FE /* iphoneos.sdk */,
 				0723C63B11BFBFD80031E3FE /* iphonesimulator.sdk */,
 				0723C4F911BFB8640031E3FE /* Documents */,
 				0723C54811BFB96C0031E3FE /* Scripts */,
-				07928F4F11DA2F080034DE07 /* Icon.png */,
-				07928F5011DA2F080034DE07 /* Default.png */,
 				2899E5210DE3E06400AC0155 /* ElectricAudioViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ElectricAudio-Info.plist */,
@@ -357,9 +430,11 @@
 			files = (
 				0723C60B11BFBA770031E3FE /* SoundEngine.h in Headers */,
 				0723C60C11BFBA7D0031E3FE /* ElectricAudio.h in Headers */,
-				0723C60D11BFBA810031E3FE /* Sound.h in Headers */,
-				0723C60E11BFBA860031E3FE /* AudioManger.h in Headers */,
 				0723C61611BFBADB0031E3FE /* AppleOpenALSupport.h in Headers */,
+				07A217BA126F364500084A47 /* SoundBuffer.h in Headers */,
+				07A217E4126F3C2B00084A47 /* SoundListener.h in Headers */,
+				07A2180C126F499200084A47 /* Sound.h in Headers */,
+				07A2187F126F655500084A47 /* SoundManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,8 +513,13 @@
 				0723C49111BFACAB0031E3FE /* Ticking.wav in Resources */,
 				0723C4C911BFB1D60031E3FE /* FanFare.wav in Resources */,
 				0723C69711BFC7670031E3FE /* TODO.rtf in Resources */,
-				07928F5311DA2F090034DE07 /* Icon.png in Resources */,
-				07928F5411DA2F090034DE07 /* Default.png in Resources */,
+				07A218BC126F696800084A47 /* application_icon@2x~iPhone.png in Resources */,
+				07A218BD126F696800084A47 /* application_icon~iPad.png in Resources */,
+				07A218BE126F696800084A47 /* application_icon~iPhone.png in Resources */,
+				07A218BF126F696800084A47 /* iTunesArtwork in Resources */,
+				07A218C0126F696800084A47 /* search_icon.png in Resources */,
+				07A218C1126F696800084A47 /* settings_search_icon.png in Resources */,
+				07A218C2126F696800084A47 /* settings_search_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,10 +546,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0723C60711BFBA500031E3FE /* AudioManger.mm in Sources */,
 				0723C60811BFBA560031E3FE /* SoundEngine.mm in Sources */,
 				0723C60911BFBA5D0031E3FE /* AppleOpenALSupport.mm in Sources */,
-				0723C60A11BFBA630031E3FE /* Sound.mm in Sources */,
+				07A217BB126F364500084A47 /* SoundBuffer.mm in Sources */,
+				07A217E5126F3C2B00084A47 /* SoundListener.mm in Sources */,
+				07A2180D126F499200084A47 /* Sound.mm in Sources */,
+				07A21880126F655500084A47 /* SoundManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,11 +563,13 @@
 				1D3623260D0F684500981E51 /* ElectricAudioAppDelegate.mm in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ElectricAudioViewController.mm in Sources */,
 				0723C1B411BE341F0031E3FE /* SoundEngine.mm in Sources */,
-				0723C20D11BE45500031E3FE /* Sound.mm in Sources */,
 				0723C27011BE5ECC0031E3FE /* AppleOpenALSupport.mm in Sources */,
-				0723C31D11BE90B00031E3FE /* AudioManger.mm in Sources */,
 				07A21770126F2C0600084A47 /* TestUncompressedSound.mm in Sources */,
 				07A21790126F2D6300084A47 /* UIDevice-Extended.mm in Sources */,
+				07A217B9126F364500084A47 /* SoundBuffer.mm in Sources */,
+				07A217E3126F3C2B00084A47 /* SoundListener.mm in Sources */,
+				07A2180B126F499200084A47 /* Sound.mm in Sources */,
+				07A2187E126F655500084A47 /* SoundManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +583,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ElectricAudio_Prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = (
 					"-fobjc-legacy-dispatch",
@@ -517,6 +603,8 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ElectricAudio_Prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = (
 					"-fobjc-legacy-dispatch",

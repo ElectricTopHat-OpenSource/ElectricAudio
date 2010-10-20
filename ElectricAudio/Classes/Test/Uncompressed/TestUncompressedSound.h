@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+namespace EA { class SoundEngine; };
+namespace EA { class Sound; };
 
 @interface TestUncompressedSound : UIViewController 
 {
@@ -15,6 +17,9 @@
 
 	IBOutlet UISlider *		soundVolume;
 	IBOutlet UISwitch *		loopSound;
+	
+	EA::Sound *				sound;
+	EA::SoundEngine	*		engine;
 }
 
 - (IBAction) createSoundObject:(id)_sender;
